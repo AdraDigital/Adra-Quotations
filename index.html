@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <title>ADRA | Quotations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="intro">
+    <img src="recursos/logo.PNG" alt="ADRA" id="intro-logo">
+    <div class="intro-line"></div>
+    <p>BUSINESS MANAGEMENT</p>
+  </div>
+
+  <main id="login-screen" class="hidden">
+    <section class="login-card">
+
+      <img src="recursos/logo.PNG" alt="ADRA" class="brand-logo">
+
+      <div class="login-heading">
+        <span class="eyebrow">ADRA DIGITAL · PRIVATE ACCESS</span>
+        <h1>Bienvenido.</h1>
+        <p>Accede a tu espacio de gestión comercial.</p>
+      </div>
+
+      <form id="login-form">
+        <label for="email">Correo electrónico</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="correo@ejemplo.com"
+          autocomplete="username"
+          required
+        >
+
+        <label for="password">Contraseña</label>
+        <div class="password-field">
+          <input
+            type="password"
+            id="password"
+            placeholder="Introduce tu contraseña"
+            autocomplete="current-password"
+            required
+          >
+          <button type="button" id="toggle-password">Mostrar</button>
+        </div>
+
+        <p id="login-error" role="alert"></p>
+
+        <button type="submit" id="login-button">
+          <span>Iniciar sesión</span>
+          <span class="button-arrow">→</span>
+        </button>
+      </form>
+
+      <footer>
+        <span>ADRA QUOTATIONS</span>
+        <span>© 2026 ADRA DIGITAL</span>
+      </footer>
+
+    </section>
+  </main>
+
+  <script>
+    const intro = document.getElementById("intro");
+    const loginScreen = document.getElementById("login-screen");
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        intro.classList.add("intro-out");
+
+        setTimeout(() => {
+          intro.style.display = "none";
+          loginScreen.classList.remove("hidden");
+          loginScreen.classList.add("visible");
+        }, 850);
+
+      }, 1700);
+    });
+
+    document.getElementById("toggle-password")
+      .addEventListener("click", () => {
+        const input = document.getElementById("password");
+        const button = document.getElementById("toggle-password");
+
+        input.type = input.type === "password" ? "text" : "password";
+        button.textContent =
+          input.type === "password" ? "Mostrar" : "Ocultar";
+      });
+  </script>
+
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>

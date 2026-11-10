@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Nueva cotización | ADRA</title>
+  <link rel="stylesheet" href="cotizacion.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="dashboard.html" class="back-link">← Volver al dashboard</a>
+    <img src="recursos/logo.PNG" alt="ADRA" class="logo">
+    <span class="top-label">GESTIÓN COMERCIAL</span>
+  </header>
+
+  <main class="container">
+
+    <section class="page-heading">
+      <div>
+        <span class="eyebrow">ADRA / COTIZACIONES</span>
+        <h1 id="page-title">Nueva cotización</h1>
+        <p>Completa los datos para generar una nueva propuesta comercial.</p>
+      </div>
+      <span class="status">BORRADOR</span>
+    </section>
+
+    <form id="quotation-form">
+
+      <section class="form-section">
+        <div class="section-heading">
+          <span class="section-number">01</span>
+          <div>
+            <h2>Información general</h2>
+            <p>Datos de identificación de la cotización.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+           <label>Número de cotización</label>
+             <input
+               id="quotation-number"
+               type="text"
+               value="Se asignará al guardar"
+               readonly
+                >
+          </div>
+
+          <div class="field">
+            <label>Fecha</label>
+            <input id="quotation-date" type="date" required>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-heading">
+          <span class="section-number">02</span>
+          <div>
+            <h2>Información del cliente</h2>
+            <p>Identificación de la persona o empresa.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label>Nombre del cliente</label>
+            <input id="client-name" type="text"
+              placeholder="Nombre completo" required>
+          </div>
+
+          <div class="field">
+            <label>Teléfono <span>(opcional)</span></label>
+            <input id="client-phone" type="tel"
+              placeholder="+502 0000-0000">
+          </div>
+
+          <div class="field full">
+            <label>Empresa</label>
+            <input id="company-name" type="text"
+              placeholder="Nombre de la empresa" required>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-heading">
+          <span class="section-number">03</span>
+          <div>
+            <h2>Detalle del servicio</h2>
+            <p>Describe el producto o servicio que se cotiza.</p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Descripción</label>
+          <textarea id="description" rows="6"
+            placeholder="Describe detalladamente el servicio..."
+            required></textarea>
+        </div>
+
+        <div class="field price-field">
+          <label>Costo total (GTQ)</label>
+          <div class="price-input">
+            <span>Q</span>
+            <input id="cost" type="number" min="0"
+              step="0.01" placeholder="0.00" required>
+          </div>
+        </div>
+      </section>
+
+      <div class="form-actions">
+        <a href="dashboard.html" class="cancel-button">Cancelar</a>
+        <button type="submit" id="save-button">
+          <span>Guardar cotización</span>
+          <span>→</span>
+        </button>
+      </div>
+
+      <p id="form-message" role="status"></p>
+
+    </form>
+
+    <footer>
+      <img src="recursos/logo.PNG" alt="ADRA">
+      <span>ADRA DIGITAL · BUSINESS MANAGEMENT</span>
+    </footer>
+
+  </main>
+
+  <script type="module" src="cotizacion.js"></script>
+</body>
+</html>

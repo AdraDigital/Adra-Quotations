@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f7f7">
+  <title>ADRA | Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="recursos/logo.PNG" alt="ADRA">
+      <span>ADRA <small>QUOTATIONS</small></span>
+    </div>
+
+    <div class="nav-label">WORKSPACE</div>
+
+    <nav>
+      <a class="nav-link active" href="dashboard.html">
+        <span>▦</span> Panel general
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="admin-label">ADMINISTRADOR</div>
+      <div id="admin-email">Cargando...</div>
+      <button id="logout-button">Cerrar sesión ↗</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <header class="topbar">
+      <div>
+        <span class="breadcrumb">ADRA / WORKSPACE</span>
+        <h1>Panel general</h1>
+      </div>
+
+      <button class="new-button" id="new-quotation">
+        + Nueva cotización
+      </button>
+    </header>
+
+    <section class="welcome">
+      <div>
+        <span class="eyebrow">GESTIÓN COMERCIAL</span>
+        <h2>Tu espacio de trabajo.</h2>
+        <p>Administra y consulta tus propuestas comerciales.</p>
+      </div>
+      <div class="welcome-mark">A.</div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span>COTIZACIONES</span>
+        <strong id="total-count">—</strong>
+        <small>Documentos registrados</small>
+      </article>
+
+      <article class="stat-card">
+        <span>VALOR COTIZADO</span>
+        <strong id="total-value">Q 0.00</strong>
+        <small>Acumulado de propuestas</small>
+      </article>
+    </section>
+
+    <section class="history">
+      <div class="history-heading">
+        <div>
+          <span class="eyebrow">REGISTROS</span>
+          <h2>Historial de cotizaciones</h2>
+        </div>
+
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Buscar cliente o empresa..."
+        >
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>NÚMERO</th>
+              <th>CLIENTE</th>
+              <th>EMPRESA</th>
+              <th>FECHA</th>
+              <th>COSTO</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody id="quotation-list">
+            <tr>
+              <td colspan="6" class="empty">
+                Cargando cotizaciones...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      ADRA DIGITAL · QUOTATIONS MANAGEMENT
+      <span>© 2026</span>
+    </footer>
+
+  </main>
+
+  <script type="module" src="dashboard.js"></script>
+
+</body>
+</html>
